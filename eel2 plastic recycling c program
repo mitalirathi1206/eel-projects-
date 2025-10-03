@@ -1,0 +1,9 @@
+// program for plastic recycling and goods manufacturing offers #include <stdio.h>
+
+void main() {int Q1,Q2,Q3,FQ; printf("Enter amount of plastic sent first time in kgs:"); scanf("%d",&Q1); printf("Enter amount of plastic sent second time:"); scanf("%d",&Q2); printf("Enter amount of plastic sent third time:"); scanf("%d",&Q3); FQ=Q1+Q2+Q3; printf("The total amount of plastic sent till now is %d KGS.\n",FQ); if(2<FQ && FQ<=5){ printf("YOU HAVE UNLOCKED OFFER OF 10% OFF ON YOUR ORDER.");
+
+} else if(FQ>5){ printf("YOU HAVE GOT 20% OFF ON ALL YOUR ORDERS.");
+
+} else{ printf("SORRY YOU NEED TO SEND MORE PLASTIC TO UNLOCK THESE AMAZING OFFERS.");
+
+} }
