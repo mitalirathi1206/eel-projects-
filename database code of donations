@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <string.h>
+
+
+struct donate{
+    char donor_id[10];
+    char name[10];
+    int donated;
+};
+
+int main()
+{
+     struct donate d[10];
+    int temp,i,j,n;
+  char tem1[10],tem2[10];  
+    printf("\nEnter number of donations:");
+    scanf("%d",&n);
+   
+   for(int i=0; i<n ; i++)
+   {
+       printf("\nEnter donor number:");
+       scanf("%s",d[i].donor_id);
+        printf("\nEnter donors name:");
+       scanf("%s",d[i].name);
+        printf("\nEnter amount donated:");
+       scanf("%d",&d[i].donated);
+   }
+   printf("\nDisplay of all entered data.\n");
+   
+   for(int i=0; i<n ; i++)
+   {
+    printf("\n Donor number:%s",d[i].donor_id);
+    printf("\n Donors name: %s", d[i].name);
+    printf("\n Amount donated:%d", d[i].donated);
+      
+   }
+   for(int i=0; i<n ; i++)
+   {
+       for(int j=i+1; j<n;j++)
+       {
+   if (d[i].donated< d[j].donated)
+   {
+       temp=d[i].donated;
+        d[i].donated=d[j].donated;
+         d[j].donated=temp;
+         
+       strcpy(tem1,d[i].donor_id);
+          strcpy(d[i].donor_id,d[j].donor_id);
+          strcpy(d[j].donor_id,tem1);
+          
+       strcpy(tem2,d[i].name);
+      
+    
+       strcpy(d[i].name,d[j].name);
+      
+       
+       strcpy(d[j].name,tem2);
+   }
+       }
+   }
+       
+       printf("\nDonors sorted by donation amount (highest to lowest):\n");
+    for (i = 0; i < n; i++) {
+        printf("\nDonor ID: %s", d[i].donor_id);
+        printf("\nDonor name: %s", d[i].name);
+        printf("\nAmount donated: %d\n", d[i].donated);
+   }
+   return 0;
+}
